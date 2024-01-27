@@ -5,7 +5,7 @@ function App() {
     <div className="App">
       <header className="App-header">
        <h1>
-        Mi primer portafolio
+        Mi primer portafolio en react
        </h1>
       </header>
     </div>
