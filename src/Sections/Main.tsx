@@ -3,6 +3,7 @@ import Presentation from '../Components/Presentation'
 import Media from '../Components/Media'
 import { MediaItem } from '../Components/Media'
 import ASSETS from '../assets'
+import NavbarWeb from '../Components/NavbarWeb'
 
 const MEDIA_ITEMS: MediaItem[] =[
   {
@@ -24,7 +25,7 @@ const MEDIA_ITEMS: MediaItem[] =[
 
 const Main = () => {
   return (
-    <section>
+    <section id='main'>
         <Presentation
         title='Raisa Guayasamin'
         subtitle='FrontEnd Developer'
@@ -33,6 +34,7 @@ const Main = () => {
         business and personal projects. I am
         focused on implement web interfaces.'
         />
+        <NavbarWeb/>
         <Media
         items={MEDIA_ITEMS}
         />

@@ -1,7 +1,3 @@
-import React from 'react'
-import ASSETS from '../assets'
-import { type } from 'os';
-
 export type MediaItem = {
     url: string;
     alt: string;
@@ -15,11 +11,11 @@ type MediaProps = {
 const Media = (props: MediaProps) => {
   return (
     <div>
-        <ul className='flex gap-10 mt-8'>
+        <ul className='flex gap-10 mt-8 sm:fixed sm:bottom-24'>
             {props.items.map((prop)=>{
                 return(
                     <li>
-                <a href={prop.url} target='_blank'>
+                <a href={prop.url} target='_blank' rel="noreferrer">
                     <img className="h-7" src={prop.image} alt={prop.alt}/>
                 </a>
             </li>

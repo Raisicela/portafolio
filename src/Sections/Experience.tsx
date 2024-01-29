@@ -1,4 +1,3 @@
-import React from 'react'
 import ExperienceCard, { ExperienceCardProps } from '../Components/ExperienceCard'
 
 const EXPERIENCE_ITEMS: ExperienceCardProps[] =[
@@ -20,8 +19,8 @@ const EXPERIENCE_ITEMS: ExperienceCardProps[] =[
 
 const Experience = () => {
   return (
-    <section>
-        <h2 className="text-white font-poppins text-lg font-semibold text-left mt-16 tracking-tight">Experience</h2>
+    <section id='experience'>
+        <h2 className="text-white font-poppins uppercase text-lg font-semibold text-left mt-16 tracking-tight">Experience</h2>
         <ul>
          {
         EXPERIENCE_ITEMS.map((experience)=>{
