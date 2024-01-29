@@ -27,12 +27,10 @@ const Main = () => {
   return (
     <section id='main'>
         <Presentation
+        image={ASSETS.LOGO}
         title='Raisa Guayasamin'
         subtitle='FrontEnd Developer'
-        description='Developer with more than three years
-        of experience generating code for
-        business and personal projects. I am
-        focused on implement web interfaces.'
+        description="Hi, I'm a frontend developer who loves creating beautiful and user-friendly web interfaces with HTML, CSS, React, Tailwind and JavaScript."
         />
         <NavbarWeb/>
         <Media

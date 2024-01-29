@@ -3,16 +3,11 @@ import ASSETS from "../assets"
 
 const PROJECT_ITEMS: ProjectCardProps[] =[
     {
-        projects:'Build a Spotify Connected',
-        description:'Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.',
-        // tags:['javascript','react','javascript','react','javascript','react','javascript','react','javascript','react'],
-        image: ASSETS.SPOTIFY
-    },
-    {
-        projects: 'Spotify',
-        description:'Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.',
-        tags:['javascript','react','javascript','react','javascript','react','javascript','react','javascript','react'],
-        image: ASSETS.SPOTIFY2
+        projects:'Full Waste',
+        description:'Development of the web page for the project. Development of the software for the full waste device. Develop of the remote monitoring system. Electronic systems design',
+        tags:['Javascript','HTML','CSS'],
+        image: ASSETS.FULLWASTE,
+        url: 'https://firebasestorage.googleapis.com/v0/b/raisa-guayasamin.appspot.com/o/pitch_v1.mp4?alt=media&token=52ae786b-7a0d-434e-add3-5705544ccea2'
     }
 ]
 
@@ -31,6 +26,7 @@ const Project = () => {
               description={project.description}
               tags={project.tags}
               image={project.image}
+              url={project.url}
               />
             </li>
             

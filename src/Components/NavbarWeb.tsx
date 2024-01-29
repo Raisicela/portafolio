@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const NavbarWeb = () => {
-    const [activeSection, setActiveSection] = useState('about');
+    const [activeSection, setActiveSection] = useState('');
   
     useEffect(() => {
        
@@ -29,7 +29,7 @@ const NavbarWeb = () => {
     }, []);
   
     return (
-        <div className='py-16'>
+        <div className='hidden sm:block py-16'>
        
         <ul className='text-left'>
           <li className='py-3'>

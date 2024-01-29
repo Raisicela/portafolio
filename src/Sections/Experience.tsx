@@ -2,18 +2,36 @@ import ExperienceCard, { ExperienceCardProps } from '../Components/ExperienceCar
 
 const EXPERIENCE_ITEMS: ExperienceCardProps[] =[
     {
-        dates: '2018 — Present',
-        job:'Lead Engineer',
-        position:'Engineer',
-        description:'Build, style, and ship high-quality websites, design systems, mobile apps, and digital experiences for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and spearheading the development of internal tools.',
-        tags:['javascript','react','javascript','react','javascript','react','javascript','react','javascript','react']
+      dates: 'September. 2023 – Current Date',
+      job:'Freelancer',
+      position:'Software Developer',
+      description:'Frontend development using NextJs framework and Tailwind CSS',
+      tags:['React.js','Javascript','Typescript','Tailwind CSS'],
+      url:''
     },
     {
-        dates: '2018 — Present',
-        job:'Lead Engineer',
-        position:'Engineer',
-        description:'Build, style, and ship high-quality websites, design systems, mobile apps, and digital experiences for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more. Provide leadership within engineering department through close collaboration, knowledge shares, and spearheading the development of internal tools.',
-        tags:['javascript','react','javascript','react','javascript','react','javascript','react','javascript','react']
+      dates: 'March 2023 - September. 2023',
+      job:'Alfabelectric',
+      position:'Frontend Developer',
+      description:'Implementation of the single page application for Alfabelectric using React, redux, typescript and tailwind css',
+      tags:['React.js','Javascript','Typescript','Tailwind CSS', 'Siteground'],
+      url:'https://alfabelectric.com/'
+    },
+    {
+      dates: 'Jun. 2021 - Nov. 2022',
+      job:'Tovo',
+      position:'Frontend Developer',
+      description:'Create frontend, SPA using React and deploy to Firebase hosting',
+      tags:['React.js','Javascript','Bootstrap','Firebase'],
+      url:'https://tovoappweb.web.app/'
+    },
+    {
+      dates: 'Agost 2019 - May 2021',
+      job:'Inselmed',
+      position:'Frontend Developer',
+      description:'Development of the SPA of the prototype of the inventory control system for the HCAM hospital. The project includes the control of users and roles, personnel management, maintenance control of hospital equipment, equipment resumes and generation of reports.',
+      tags:['React.js','Javascript','Bootstrap','Firebase'],
+      url:'https://inventario-inselmed.web.app/signin'
     }
 ]
 
@@ -32,6 +50,7 @@ const Experience = () => {
               position={experience.position}
               description={experience.description}
               tags={experience.tags}
+              url={experience.url}
               />
             </li>
             
