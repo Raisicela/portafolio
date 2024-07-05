@@ -1,0 +1,14 @@
+/* body {
+    min-height: calc(100vh - 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+} */
+
+svg {
+    /* flex-shrink: 0; */
+    /* width: 20vw; */
+    height: 200px;
+    max-width: 80vw;
+}

@@ -1,42 +1,97 @@
 import Tag from "./Tag";
+import React, { useRef } from "react";
 
 export type ExperienceCardProps = {
-  dates: string;
+  dates?: string;
   job: string;
   position: string;
+  image: string;
+  isVideo: boolean;
   description: string;
   tags: string[];
-  url: string
+  url: string;
 };
 
-const ExperienceCard = (props:ExperienceCardProps) => {
+const ExperienceCard = (props: ExperienceCardProps) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const handleMouseOver = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseOut = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
   return (
-    <article className="flex flex-col text-left mt-8 border-slate-400 border-[1px] rounded-3xl p-5">
-      <header className=" mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 ">{props.dates}</header>
-      <a href={props.url} target='_blank' rel="noreferrer" className="flex gap-2">
-        <span className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">{props.job}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-white h-4" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd"></path></svg>
-      </a>
-      <h3 className="text-slate-500">{props.position}</h3>
-      <p className="text-slate-400 mt-2 text-sm leading-normal">{props.description}</p>
-      <ul className="flex flex-wrap gap-2 mt-5">
-      {
-        props.tags.map((tag)=>{
-          return(
-            <li>
-              <Tag
-                tag={tag}
-              />
-            </li>
-            
-          )
-        })
-      }
-
-      </ul>
-      
+    <article className="flex flex-col text-left mt-8 rounded-3xl pb-5 bg-[#1E293B]">
+      <header className=" mb-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+        {props.isVideo && (
+          <video
+            ref={videoRef}
+            poster={props.image}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            src={props.image}
+            autoPlay
+            muted
+          ></video>
+        )}
+        {!props.isVideo && (
+          <picture>
+            <img
+              src={props.image}
+              alt={props.description}
+              className="rounded-t-3xl"
+            />
+          </picture>
+        )}
+        {/* <div className="px-4 mt-4">{props.dates}</div> */}
+      </header>
+      <div className="px-4 ">
+        <a
+          href={props.url}
+          target="_blank"
+          rel="noreferrer"
+          className="flex gap-2"
+        >
+          <span className="inline-flex items-baseline font-bold text-3xl leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link">
+            {props.job}
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 15 15"
+            fill="currentColor"
+            className="text-white h-4"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+              clipRule="evenodd"
+            ></path>
+          </svg>
+        </a>
+        <h3 className="text-slate-500">{props.position}</h3>
+        <p className="text-slate-400 mt-2 text-lg leading-normal">
+          {props.description}
+        </p>
+        <ul className="flex flex-wrap gap-2 mt-5">
+          {props.tags.map((tag, i) => {
+            return (
+              <li key={i}>
+                <Tag tag={tag} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </article>
-  )
-}
+  );
+};
 
-export default ExperienceCard
+export default ExperienceCard;
